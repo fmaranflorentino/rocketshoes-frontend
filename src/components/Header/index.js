@@ -16,15 +16,17 @@ function Header({ cartSize }) {
         <img src={logo} alt="Rocketshoes" />
       </Link>
 
-      <Cart>
-        <div>
-          <strong>Meu carrinho</strong>
-          <span>
-            {cartSize === 1 ? `${cartSize} item` : `${cartSize} itens`}
-          </span>
-        </div>
-        <MdShoppingBasket size={36} color="#fff" />
-      </Cart>
+      <Link to="/cart">
+        <Cart>
+          <div>
+            <strong>Meu carrinho</strong>
+            <span>
+              {cartSize === 1 ? `${cartSize} item` : `${cartSize} itens`}
+            </span>
+          </div>
+          <MdShoppingBasket size={36} color="#fff" />
+        </Cart>
+      </Link>
     </Container>
   );
 }
