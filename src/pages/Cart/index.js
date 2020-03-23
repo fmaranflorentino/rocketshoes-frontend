@@ -9,7 +9,7 @@ import {
 
 import { Container, ProductTable, Total } from './styles';
 
-function Cart({ cart }) {
+function Cart({ cart, dispatch }) {
   console.log('cart', cart);
   return (
     <Container>
@@ -48,7 +48,16 @@ function Cart({ cart }) {
                 <strong>{product.price}</strong>
               </td>
               <td>
-                <MdDelete size={20} color="#7159c1" />
+                <MdDelete
+                  size={20}
+                  color="#7159c1"
+                  onClick={() =>
+                    dispatch({
+                      type: 'REMOVE_FROM_CART',
+                      id: product.id,
+                    })
+                  }
+                />
               </td>
             </tr>
           ))}
